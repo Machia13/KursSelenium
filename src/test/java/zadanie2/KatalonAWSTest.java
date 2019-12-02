@@ -32,21 +32,17 @@ public class KatalonAWSTest {
 
         // put first name
         WebElement firstName = driver.findElement(By.id("first-name"));
-        if (firstName.isDisplayed())
-        {
-            firstName.clear();
-            firstName.sendKeys("Karol");
+        firstName.clear();
+        firstName.sendKeys("Karol");
 
-            System.out.println(driver.findElement(By.xpath("//*[@id=\"infoForm\"]/div[1]/label")).getText()
-                    + " " + firstName.getAttribute("value"));
-        }
-        else
-            Assert.fail();
+        System.out.println(driver.findElement(By.xpath("//*[@id=\"infoForm\"]/div[1]/label")).getText()
+                + " " + firstName.getAttribute("value"));
 
         // put last name
-        WebElement lastName = driver.findElement(By.id("last-name"));
-        lastName.clear();
-        lastName.sendKeys("Kowalski");
+//        WebElement lastName = driver.findElement(By.id("last-name"));
+//        lastName.clear();
+//        lastName.sendKeys("Kowalski");
+        inputLastName("Kowalski");
 
         // click Male gender
         WebElement male = driver.findElement(By.xpath("//*[@id='infoForm']/div[3]/div/div/label[1]/input"));
@@ -107,5 +103,11 @@ public class KatalonAWSTest {
     @After
     public void tearDown(){
         //driver.quit();
+    }
+
+    private void inputLastName(String lastNameString) {
+        WebElement lastName = driver.findElement(By.id("last-name"));
+        lastName.clear();
+        lastName.sendKeys(lastNameString);
     }
 }
