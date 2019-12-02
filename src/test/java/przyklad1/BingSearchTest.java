@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.junit.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.List;
+
 public class BingSearchTest {
 
     private WebDriver driver;
